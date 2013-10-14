@@ -13,10 +13,12 @@ jimport('joomla.plugin.plugin');
 
 class PlgContentPresetphpvariables extends JPlugin {
 
-    public function __construct(& $subject, $config) {
-        parent::__construct($subject, $config);
-        $this->loadLanguage();
-    }
+	/**
+	 * Load the language file on instantiation.
+	 *
+	 * @var    boolean
+	 */
+	protected $autoloadLanguage = true;
 
     /**
      * Plugin that replaces php 'style' variables in content with user set vaues site wide.
