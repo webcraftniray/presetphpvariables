@@ -21,7 +21,7 @@ class PlgContentPresetphpvariables extends JPlugin {
 	protected $autoloadLanguage = true;
 
     /**
-     * Plugin that replaces php 'style' variables in content with user set vaues site wide.
+     * Plugin that replaces php 'style' variables in content with user set values site wide.
      *
      * @param   string   $context   The context of the content being passed to the plugin.
      * @param   mixed    &$article  An object with a "text" property to be processed.
@@ -33,7 +33,6 @@ class PlgContentPresetphpvariables extends JPlugin {
     public function onContentPrepare($context, &$article, &$params, $page = 0) {
 
         $data = json_decode($this->params->get('list_vars'));
-        $text = $article->text;
 
         return $this->_switchReplace($article->text, $data);
     }
